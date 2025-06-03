@@ -38,9 +38,9 @@ The following endpoints are available:
 
 ## Screenshots
 
-![Screenshot 1](screenshots/home.png)
-![Screenshot 1](screenshots/detail.png)
-![Screenshot 1](screenshots/detail2.png)
+![Screenshot 1](screenshots/home.PNG)
+![Screenshot 2](screenshots/detail.png)
+![Screenshot 3](screenshots/detail2.png)
 
 ## Getting Started
 
