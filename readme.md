@@ -46,7 +46,7 @@ The following endpoints are available:
 
 1. Clone the repository: `git clone https://github.com/olabrass/node-farm.git`
 2. Install dependencies: `npm install` (to install nodemon)
-3. Start the server: `node index.js` (assuming your server file is named `index.js`)
+3. Start the server: `node index.js` 
 4. Open your browser and navigate to `http://localhost:8000` 
 
 ## Learning Objectives
