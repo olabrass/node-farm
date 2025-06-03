@@ -1,0 +1,42 @@
+1. each file in node js treated as a module
+NPM is a software that is used to manage third party open source packages
+At the beginging of a project, use "npm init" on the command line interface, this will create "package.json" file, this is the file that contains basic information about your project, basic information would be asked during this process, information like, the project name, Author and others.
+There are two types of packages/dependency, namely, simple/regular dependency and development dependency. regular dependency are useful for our program to run even after production, while development dependency are useful only during development. to instal regular dependency, use "npm instal dependencyName", but to instal development dependency, use "npm install dependencyName --save-dev", you can find the details of your installation in package.json file in your project. (Slugify was installed as a regular dependency, while nodemon was install as a development dependency)
+You can install a package globbally with the following command "npm install packageName --global", now we can make nodemon a globald dependency. 
+Nodemon development dependency is used for restarting the server automatically at any change made, with this, you dont have to stop and start the server anytime you make changes. now, instead of using "node fileName.js" to start the server, you will use "nodemon fileName.js" to start the server once and for all.
+If you have not globbally installed nodemon, then to use it locally after installation, you need to specify it in the package.js file under scripts, add "start": "nodemon index.js" under script, then to start the server, you will use "npm run start", because now you are running a script, and that is how to run a script in nodejs.
+PACKAGE VERSIONING AND UPDATING ===== Each dependencythat is installed always have their versions string e.g "Slugify": "^3.1.9", The caret(^) symbol indicates that the version specified is the minimum version required, the "3" means major version(Significant changes, often breaking changes.), "1" means minor version(New features or enhancements, backward-compatible.), and "9" means patch( Bug fixes, backward-compatible.).   To install lower version of an existing package, then you need to specify it during installation e.g "npm install Slugify@1.0.0" this will install 1.0.0 version of Slugify. to check for outdated version of dependencies, run "npm outdated" in the command line.
+TO uninstall a package, use "npm uninstall packageName"
+All dependencies are installed inside "node-modeules" folder
+if you want to transfer a project from one computer to another one, or you want to upload your project to Github repository, dont copy the "node-modules" along, because you can easily install back the modules with the details present inside package.json and package-lock.json file by using "npm install", this will install all the packages back, according to the dependency record in package.json, and maintain the version according to the record in package-lock.json.
+HOW THE WEB WORKS ==== The client(web browser) sends request, and the server sends response according to the request, this is called request-response model or client-serve architecture.
+Read about Expired timer callback, I/O polling and callbacks, setimmediate callbacks, CLose callbacks, process.nexttick() queue, other microtask queue, single thread, thread pool, event loop.
+THINGS TO DO NOT TO BLOCK THE EVENT LOOP ====== (1) Dont use sync version of function in fs, crypto and lib modules in your callback function. (2) Dont perform complex calculations (e.g loops inside loops). (3) Becarefule with JSON large object (4) Dont use complex regular expressions(e,g nested quantifiers)
+Read about event Emitter and listener
+We can set multiple event listers for one event emitter
+STREAM ==== Stream is a way of loading file bit by bit, so that the whole file is not loaded to the memory, this is the method used on youtube and netflix that make individual to be able to start watching a video even when it is not wholly loaded. There are Readable streams, writable streams, duplex streams, and transform streams.
+READABLE STREAMS === Streams that we can read (consume) data from e. HTTP request, fs read streams, important events are data(), and end(), Important functions are pipe(), and read().
+WRITABLE STREAMS ==== Streams to which we can write data, e.g HTTP response, and fs write stream, important events are drain(), and finish(). Important functions are write(), and end(),
+In Node.js, the module wrapper function is a function that wraps the code of every module before it is executed. This wrapper function provides each module with its own scope and essential utilities. It has the following structure: (function(exports, require, module, __filename, __dirname) { // Module code lives here}); To see this in action use "console.log(arguements);" or better use "console.log(require(module).wrapper);"
+Study ESM module import and export, don't use CJS import and export, instead, use ESM method. 
+Read about Asyc function, try...catch, Asyc..await, and throw
+REST (RESTFUL API) mean REpresentanal Status Transfer, it is an achitecture for building API
+Always remeber to use "next()" while creating a custom middleware
+You can create custom middleware to check anything, e.g, a middleware that check if id is present in an endpoint
+environment variable should be written inside .env file(config.env)
+SETTING UP ESLINT AND PRETTIER: npm install eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-ally eslint-plugin-react --save-dev
+
+
+MONGO DB : MOngoDB is a database management system, it is a noSQL database, a collection is similar to a table in SQL database, while a document is similar to a row in SQL database. it stores data inform of document(field value paired like JSON), it uses BSON
+Mongoose is Object Data Modeling Library for MongoDB
+Start a model name with capital letter, that is the naming convention 
+Mongoose is a layer of abstraction 
+Study about regular expressions
+FILTER, SORT, AND FIELD LIMITING === FILTER: Reduces the dataset to only include items that match specific conditions. For example, filtering users by age or country.
+SORT: Orders the dataset in ascending or descending order based on one or more fields. For example, sorting users by name or date created.
+FIELD LIMITING: Selects which fields to include or exclude from the response. For example, only returning the name and email fields for each user.
+AGGREGATION PIPELINE === This is majorly used for statistics, like calculating, minimum, maximum, average of data, it is a mongoDB feature. AGGREGATION PIPELINE STAGES === MATCHING, GROUPING, UNWINDING, LIMIT, and PROJECTING.
+FOUR TYPES OF MIDDLEWARE IN MONGOOSE === Document middleware, Query middleware, Model middleware and Aggregate middleware, We have pre and post middleware, it is otherwise called a HOOK.
+VALIDATOR === You can install "validator" for mogoose inbuilt validation.
+
+NODE DEBURGER(NDB) is achived, use the following instead, Node.js Inspector (built-in),chrome DevTools, Visual Studio Code Debugger, and WebStorm Debugger
